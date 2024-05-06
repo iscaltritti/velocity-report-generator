@@ -1,0 +1,14 @@
+export const settings = {
+  slack: {
+    accessToken: "",
+  },
+  projects: {
+    YIQ: {
+      directory: "./profiles/yiq/",
+      slack: {
+        channelId: "",
+        isEnable: false,
+      },
+    },
+  },
+};

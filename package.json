@@ -1,0 +1,14 @@
+{
+  "name": "velocity-report-generator",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Ian Scaltritti",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@slack/web-api": "^7.0.4",
+    "csv-parser": "^3.0.0",
+    "lowdb": "^7.0.1",
+    "readline": "^1.3.0"
+  }
+}
