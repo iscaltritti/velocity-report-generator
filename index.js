@@ -35,7 +35,7 @@ const importSprint = async (directory, sprintId) => {
       delete sprint.assignees[name];
       continue;
     }
-    const daysWorked = await readline.question(`How many days did ${name} work? (${DAYS_WORKED_DEFAULT})`);
+    const daysWorked = await readline.question(`How many days did ${name} work? (${DAYS_WORKED_DEFAULT}): `);
     // const daysWorked = "10";
     sprint.assignees[name].ratio = assignee.completed / assignee.committed || 0;
     sprint.assignees[name].daysWorked = Number(daysWorked) || DAYS_WORKED_DEFAULT;
