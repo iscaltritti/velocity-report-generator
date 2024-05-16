@@ -17,12 +17,17 @@ const main = async () => {
   projectPrompt += "\nYour Choice: ";
   const choice = await readline.question(projectPrompt);
   // const choice = 0;
-  const { directory, slack } = settings.projects[choices[choice]];
+  const { directory, channelId } = settings.projects[choices[choice]];
   const sprintId = await readline.question("Sprint ID: ");
   // const sprintId = "187";
   const sprint = await importSprint(directory, sprintId);
   const analityics = await generateAnalytics(directory);
-  await report(sprintId, sprint, analityics, slack.isEnable, slack.channelId);
+  const report = await generateReport(sprintId, sprint, analityics);
+  console.log(report);
+  const isSlack = await readline.question("Would you like to send it through Slack? y/N: ");
+  if (isSlack.toUpperCase() === "Y") {
+    await sendMessage(channelId, report);
+  }
 };
 
 const importSprint = async (directory, sprintId) => {
@@ -110,7 +115,7 @@ const generateAnalytics = async (directory) => {
   return analytics;
 };
 
-const report = async (sprintId, sprint, analytics, slackIsEnable, slackChannelId) => {
+const generateReport = async (sprintId, sprint, analytics) => {
   const { completed, committed, uncommitted } = sprint.summary;
   let message = `[Velocity Report] Sprint Completed! 👏👏👏 (Sprint ID: ${sprintId})`;
   message += `\nThe team completed ${completed} out of ${committed} committed effort points.`;
@@ -128,16 +133,7 @@ const report = async (sprintId, sprint, analytics, slackIsEnable, slackChannelId
   message += `\nE/D = effort / worked days over the last ${ANALYTICS_THRESHOLD} available sprints`;
   message += "\n```";
   message += "\nIf you liked this report, react to it! Feedback is very much appreciated. - Ian";
-  console.log(message);
-  if (slackIsEnable) {
-    try {
-      await sendMessage(slackChannelId, message);
-      console.log("Sent to Slack");
-    } catch (error) {
-      console.warn("Sending to Slack failed. (Is channel ID correct? Is bot invited in channel?)");
-      console.warn(error);
-    }
-  }
+  return message;
 };
 
 await main();

@@ -1,14 +1,20 @@
 export const settings = {
-  slack: {
-    accessToken: "",
-  },
-  projects: {
-    YIQ: {
-      directory: "./profiles/yiq/",
-      slack: {
+    slack: {
+      accessToken: "",
+    },
+    projects: {
+      IIQ: {
+        directory: "./profiles/iiq/",
         channelId: "",
-        isEnable: false,
+      },
+      IIQSAAS: {
+        directory: "./profiles/IIQSAAS/",
+        channelId: "",
+      },
+      YIQ: {
+        directory: "./profiles/yiq/",
+        channelId: "",
       },
     },
-  },
-};
+  };
+  
