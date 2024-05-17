@@ -17,7 +17,7 @@ const main = async () => {
   projectPrompt += "\nYour Choice: ";
   const choice = await readline.question(projectPrompt);
   // const choice = 0;
-  const { directory, channelId } = settings.projects[choices[choice]];
+  const { directory, channel } = settings.projects[choices[choice]];
   const sprintId = await readline.question("Sprint ID: ");
   // const sprintId = "187";
   const sprint = await importSprint(directory, sprintId);
@@ -26,7 +26,7 @@ const main = async () => {
   console.log(report);
   const isSlack = await readline.question("Would you like to send it through Slack? y/N: ");
   if (isSlack.toUpperCase() === "Y") {
-    await sendMessage(channelId, report);
+    await sendMessage(channel, report);
   }
 };
 
