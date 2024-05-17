@@ -5,15 +5,15 @@ export const settings = {
     projects: {
       IIQ: {
         directory: "./profiles/iiq/",
-        channelId: "",
+        channel: "",
       },
       IIQSAAS: {
         directory: "./profiles/IIQSAAS/",
-        channelId: "",
+        channel: "",
       },
       YIQ: {
         directory: "./profiles/yiq/",
-        channelId: "",
+        channel: "",
       },
     },
   };
