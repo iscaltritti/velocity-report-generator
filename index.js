@@ -124,7 +124,7 @@ const generateReport = async (sprintId, sprint, analytics) => {
   }
   for (const [name, assignee] of Object.entries(sprint.assignees)) {
     const metrics = analytics.assignees[name];
-    (message += `\n- ${name} (${assignee.completed} of ${assignee.committed})`),
+    (message += `\n- ${name} (${assignee.completed} of ${assignee.committed} in ${assignee.daysWorked} days)`),
       (message += "  "),
       (message += `\`Ratio: ${metrics.ratio.toFixed(2)} | E/D: ${metrics.effortPerDay.toFixed(2)}\``);
   }
