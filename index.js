@@ -120,7 +120,7 @@ const generateReport = async (sprintId, sprint, analytics) => {
   let message = `[Velocity Report] Sprint Completed! 👏👏👏 (Sprint ID: ${sprintId})`;
   message += `\nThe team completed ${completed} out of ${committed} committed effort points.`;
   if (uncommitted) {
-    message += `\n${uncommitted} points where added to the sprint while active.`;
+    message += `\n${uncommitted} points were added to the sprint while active.`;
   }
   for (const [name, assignee] of Object.entries(sprint.assignees)) {
     const metrics = analytics.assignees[name];
