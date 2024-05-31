@@ -129,8 +129,8 @@ const generateReport = async (sprintId, sprint, analytics) => {
       (message += `\`Ratio: ${metrics.ratio.toFixed(2)} | E/D: ${metrics.effortPerDay.toFixed(2)}\``);
   }
   message += "\n```";
-  message += `\nRatio = completed / committed over the last ${ANALYTICS_THRESHOLD} available sprints`;
-  message += `\nE/D = effort / worked days over the last ${ANALYTICS_THRESHOLD} available sprints`;
+  message += `\nRatio = completed / committed over the last ${analytics.sprintCount} sprints`;
+  message += `\nE/D = effort / worked days over the last ${analytics.sprintCount} sprints`;
   message += "\n```";
   message += "\nIf you liked this report, react to it! Feedback is very much appreciated. - Ian";
   return message;
