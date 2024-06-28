@@ -39,7 +39,7 @@ const generateReport = async (sprintId, sprint, analytics) => {
     const accuracy = metrics.ratio <= 0 ? 0 : Math.round(Math.max(0, 100 - Math.abs(1 - metrics.ratio) * 100));
     const eD = metrics.effortPerDay.toFixed(1);
     message += `\n- ${name}: ${assignee.completed} of ${assignee.committed} in ${assignee.daysWorked} days`;
-    message += `(\`Accuracy: ${accuracy}%, E/D: ${eD}\`)`;
+    message += ` (\`Accuracy: ${accuracy}%, E/D: ${eD}\`)`;
   }
   message += "\n```";
   message += `\nAccuracy and E/D (effort points per worked day) were based on the last ${analytics.sprintCount} sprints.`;
