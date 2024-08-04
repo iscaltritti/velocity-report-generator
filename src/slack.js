@@ -1,5 +1,5 @@
 import { WebClient } from "@slack/web-api";
-import { settings } from "./settings.js";
+import { settings } from "../settings.js";
 
 export const sendMessage = async (channel, text) => {
   try {

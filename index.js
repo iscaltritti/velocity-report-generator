@@ -1,5 +1,5 @@
 import { createInterface } from "node:readline/promises";
-import { settings } from "./src/settings.js";
+import { settings } from "./settings.js";
 import { importSprint } from "./src/import.js";
 import { generateAnalytics } from "./src/analytics.js";
 import { sendMessage } from "./src/slack.js";
@@ -8,15 +8,15 @@ export const readline = createInterface({ input: process.stdin, output: process.
 
 const main = async () => {
   console.log("Welcome to the Velocity Report Generator v0.1");
-  const profiles = Object.keys(settings.profiles);
-  let profilePrompt = "Select a profile:\n";
-  profilePrompt += profiles.map((profile, index) => `[${index}] - ${profile}`).join("\n");
-  profilePrompt += "\nYour Choice: ";
-  const choice = await readline.question(profilePrompt);
-  // const choice = 0;
-  const { directory, channel } = settings.profiles[profiles[choice]];
-  const sprintId = await readline.question("Sprint ID: ");
-  // const sprintId = "187";
+  const projects = Object.keys(settings.projects);
+  let projectPrompt = "Select a project:\n";
+  projectPrompt += projects.map((project, index) => `[${index}] ${project}`).join("\n");
+  projectPrompt += "\nYour Choice: ";
+  const projectChoice = await readline.question(projectPrompt);
+  // const projectChoice = 0;
+  const { directory, channel } = settings.projects[projects[projectChoice]];
+  const sprintId = await readline.question(`Sprint ID: `);
+  // const sprintId = "200";
   const sprint = await importSprint(directory, sprintId, readline);
   const analityics = await generateAnalytics(directory);
   const report = await generateReport(sprintId, sprint, analityics);
@@ -45,15 +45,6 @@ const generateReport = async (sprintId, sprint, analytics) => {
   message += `\nAccuracy and E/D (effort points per worked day) were based on the last ${analytics.sprintCount} sprints.`;
   message += "\n```";
   return message;
-};
-
-const percentageFromRatio = (ratio) => {
-  if (ratio <= 0) {
-    return 0;
-  }
-  const distance = Math.abs(1 - ratio);
-  const percentage = Math.max(0, 100 - distance * 100);
-  return Math.round(percentage);
 };
 
 await main();

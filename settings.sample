@@ -3,16 +3,12 @@ export const settings = {
       accessToken: "",
     },
     projects: {
-      IIQ: {
-        directory: "./profiles/iiq/",
-        channel: "",
-      },
       IIQSAAS: {
-        directory: "./profiles/IIQSAAS/",
+        directory: "./projects/IIQSAAS/",
         channel: "",
       },
       YIQ: {
-        directory: "./profiles/yiq/",
+        directory: "./projects/yiq/",
         channel: "",
       },
     },
