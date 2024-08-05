@@ -6,7 +6,7 @@ export const sendMessage = async (channel, text) => {
     const client = new WebClient(settings.slack.accessToken);
     await client.chat.postMessage({ text, channel });
   } catch (error) {
-    console.warn("Sending to Slack failed. (Is channel ID correct? Is bot invited in channel?)");
     console.warn(error);
+    console.warn("Posting to Slack failed. Is channelId correct? Was your bot invited to the channel?");
   }
 };

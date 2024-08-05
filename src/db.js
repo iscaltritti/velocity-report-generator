@@ -2,28 +2,28 @@ import { JSONFilePreset } from "lowdb/node";
 
 let db;
 
-const getDb = async (directory, defaultData = { sprints: {}, analytics: {} }) => {
+const getDb = async (project = undefined, defaultData = { sprintAnalytics: {}, projectAnalytics: {} }) => {
   if (!db) {
-    db = await JSONFilePreset(`${directory}/db.json`, defaultData);
+    if (!project) {
+      throw new Error("Cannot initialize database without a project name.");
+    }
+    db = await JSONFilePreset(`./projects/${project}.json`, defaultData);
   }
   return db;
 };
 
-export const putSprint = async (directory, id, sprint) => {
-  const db = await getDb(directory);
-  await db.update(({ sprints }) => (sprints[id] = sprint));
+export const persistSprintAnalytics = async (sprintId, data, project = undefined) => {
+  const db = await getDb(project);
+  await db.update(({ sprintAnalytics }) => (sprintAnalytics[sprintId] = data));
 };
 
-export const getSprints = async (directory, id) => {
-  const db = await getDb(directory);
-  if (id) {
-    return db.data.sprints[id];
-  }
-  return db.data.sprints;
+export const retrieveSprintAnalytics = async (project = undefined) => {
+  const db = await getDb(project);
+  return db.data.sprintAnalytics;
 };
 
-export const putAnalytics = async (directory, analytics) => {
-  const db = await getDb(directory);
-  db.data.analytics = analytics;
+export const persistProjectAnalytics = async (data, project = undefined) => {
+  const db = await getDb(project);
+  db.data.projectAnalytics = data;
   await db.write();
 };
