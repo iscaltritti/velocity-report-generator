@@ -1,12 +1,12 @@
 import { retrieveSprintAnalytics } from "./db.js";
-import { PROJECT_ANALYTICS_THRESHOLD, EFFORT_FIELD_NAME, DONE_STATUSES } from "./constants.js";
+import { settings } from "../settings.js";
 
 export const analyzeSprint = async (issues, daysWorkedByAssignee) => {
   const baseCounters = { committed: 0, completed: 0, uncommitted: 0 };
   const sprint = issues.reduce(
     ({ assignees, summary }, { fields }) => {
       const assignee = fields.assignee?.displayName;
-      const effort = fields[EFFORT_FIELD_NAME];
+      const effort = fields[settings.jira.effortFieldName];
       const status = fields.status.name;
       const isNew = fields.labels.includes("New");
       if (!assignees[assignee]) {
@@ -19,7 +19,7 @@ export const analyzeSprint = async (issues, daysWorkedByAssignee) => {
         summary.committed += effort;
         assignees[assignee].committed += effort;
       }
-      if (DONE_STATUSES.includes(status)) {
+      if (settings.jira.doneStatuses.includes(status)) {
         summary.completed += effort;
         assignees[assignee].completed += effort;
       }
@@ -43,7 +43,7 @@ export const analyzeProject = async (project) => {
   const sprints = await retrieveSprintAnalytics(project);
   const sprintIds = Object.keys(sprints)
     .sort((a, b) => b - a)
-    .slice(0, PROJECT_ANALYTICS_THRESHOLD);
+    .slice(0, settings.projects[project].analyticsThreshold);
   const analytics = sprintIds.reduce(
     (accumulator, sprintId) => {
       const sprint = sprints[sprintId];

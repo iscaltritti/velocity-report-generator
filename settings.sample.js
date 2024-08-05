@@ -4,13 +4,17 @@ export const settings = {
   },
   jira: {
     apiToken: "",
-    domain: "",
+    domain: "https://<domain-name>.atlassian.net",
     email: "",
+    doneStatuses: ["Staged", "Done", "Dropped"],
+    effortFieldName: "customfield_10024",
   },
   projects: {
-    projectId: {
-      boardId: 1,
+    "<project-id>": {
+      boardId: 0,
       channelId: "",
-    }
+      defaultWorkedDays: 10,
+      analyticsThreshold: 5,
+    },
   },
 };

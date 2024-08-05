@@ -4,7 +4,6 @@ import { settings } from "./settings.js";
 import { analyzeProject, analyzeSprint, generateReport } from "./src/analytics.js";
 import { sendMessage } from "./src/slack.js";
 import { getAllIssuesBySprintId, getAllSprintsByBoardId } from "./src/jira.js";
-import { DEFAULT_WORKED_DAYS, DONE_STATUSES } from "./src/constants.js";
 import { persistSprintAnalytics } from "./src/db.js";
 
 export const readline = createInterface({ input: process.stdin, output: process.stdout });
@@ -15,7 +14,7 @@ const main = async () => {
   const project = await promptProject();
   const sprintId = await promptSprintId(settings.projects[project].boardId);
   const issues = await getAllIssuesBySprintId(sprintId);
-  const daysWorkedByAssignee = await promptDaysWorkedByAssignee(issues);
+  const daysWorkedByAssignee = await promptDaysWorkedByAssignee(issues, settings.projects[project].defaultWorkedDays);
   const sprintAnalytics = await analyzeSprint(issues, daysWorkedByAssignee);
   await persistSprintAnalytics(sprintId, sprintAnalytics, project);
   const projectAnalytics = await analyzeProject();
@@ -64,11 +63,10 @@ const promptSprintId = async (boardId) => {
   }
 };
 
-const promptDaysWorkedByAssignee = async (issues) => {
+const promptDaysWorkedByAssignee = async (issues, defaultAnswer) => {
   const daysWorkedByAssignee = {};
-  const defaultAnswer = DEFAULT_WORKED_DAYS;
   const names = issues.reduce((accumulator, issue) => {
-    if (DONE_STATUSES.includes(issue.fields.status.name)) {
+    if (settings.jira.doneStatuses.includes(issue.fields.status.name)) {
       accumulator.add(issue.fields.assignee.displayName);
     }
     return accumulator;
