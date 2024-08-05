@@ -1,97 +1,26 @@
-import inspector from "inspector";
-import { createInterface } from "node:readline/promises";
 import { settings } from "./settings.js";
-import { analyzeProject, analyzeSprint, generateReport } from "./src/analytics.js";
-import { sendMessage } from "./src/slack.js";
+import { promptDaysWorkedByAssignee, promptProject, promptSlack, promptSprintId } from "./src/prompts.js";
 import { getAllIssuesBySprintId, getAllSprintsByBoardId } from "./src/jira.js";
-import { persistSprintAnalytics } from "./src/db.js";
-
-export const readline = createInterface({ input: process.stdin, output: process.stdout });
-const isDebugger = inspector.url() !== undefined;
+import { analyzeProject, analyzeSprint, generateReport } from "./src/analytics.js";
+import { persistProjectAnalytics, persistSprintAnalytics } from "./src/db.js";
+import { sendMessage } from "./src/slack.js";
 
 const main = async () => {
   console.log("Welcome to the Velocity Report Generator v0.2");
   const project = await promptProject();
-  const sprintId = await promptSprintId(settings.projects[project].boardId);
+  const sprints = await getAllSprintsByBoardId(settings.projects[project].boardId);
+  const sprintId = await promptSprintId(sprints);
   const issues = await getAllIssuesBySprintId(sprintId);
   const daysWorkedByAssignee = await promptDaysWorkedByAssignee(issues, settings.projects[project].defaultWorkedDays);
   const sprintAnalytics = await analyzeSprint(issues, daysWorkedByAssignee);
   await persistSprintAnalytics(sprintId, sprintAnalytics, project);
-  const projectAnalytics = await analyzeProject();
-  await persistAnalytics(projectAnalytics);
+  const projectAnalytics = await analyzeProject(project);
+  await persistProjectAnalytics(projectAnalytics);
   const report = await generateReport(sprintId, sprintAnalytics, projectAnalytics);
   console.log(report);
-  if (await promptSlack()) {
+  const slack = await promptSlack();
+  if (slack) {
     await sendMessage(settings.projects[project].channelId, report);
-  }
-};
-
-const promptProject = async () => {
-  const projects = Object.keys(settings.projects);
-  const defaultAnswer = projects[0];
-  let prompt = "Select a Project:\n";
-  prompt += projects.map((project) => `> [${project}]`).join("\n");
-  prompt += `\nYour Choice (Default: ${defaultAnswer}): `;
-  if (isDebugger) {
-    console.log(prompt);
-    return defaultAnswer;
-  } else {
-    return (await readline.question(prompt)) || defaultAnswer;
-  }
-};
-
-const promptSprintId = async (boardId) => {
-  const sprints = (await getAllSprintsByBoardId(boardId)).sort((a, b) => b.id - a.id);
-  const { id: defaultAnswer } = sprints.find((sprint) => sprint.state === "active");
-  const mapper = (sprint) => {
-    let description = sprint.state.charAt(0).toUpperCase() + sprint.state.slice(1);
-    if (description != "Future") {
-      const startDate = new Date(sprint.startDate).toISOString().split("T")[0];
-      const endDate = new Date(sprint.endDate).toISOString().split("T")[0];
-      description += `, ${startDate || "?"} to ${endDate || "?"}`;
-    }
-    return `> [${sprint.id}] ${description}`;
-  };
-  let prompt = "Select a Sprint ID:\n";
-  prompt += sprints.slice(0, 4).map(mapper).join("\n");
-  prompt += `\nYour Choice (Default: ${defaultAnswer}): `;
-  if (isDebugger) {
-    console.log(prompt);
-    return defaultAnswer;
-  } else {
-    return (await readline.question(prompt)) || defaultAnswer;
-  }
-};
-
-const promptDaysWorkedByAssignee = async (issues, defaultAnswer) => {
-  const daysWorkedByAssignee = {};
-  const names = issues.reduce((accumulator, issue) => {
-    if (settings.jira.doneStatuses.includes(issue.fields.status.name)) {
-      accumulator.add(issue.fields.assignee.displayName);
-    }
-    return accumulator;
-  }, new Set());
-  for (const name of names) {
-    const prompt = `Days worked by ${name} (Default: ${defaultAnswer}): `;
-    let daysWorked;
-    if (isDebugger) {
-      console.log(prompt);
-      daysWorked = defaultAnswer;
-    } else {
-      daysWorked = (await readline.question(prompt)) || defaultAnswer;
-    }
-    daysWorkedByAssignee[name] = Number(daysWorked);
-  }
-  return daysWorkedByAssignee;
-};
-
-const promptSlack = async () => {
-  const prompt = "Would you like to post this report to Slack? Y/N (Default: N): ";
-  if (isDebugger) {
-    console.log(prompt);
-    return false;
-  } else {
-    return (await readline.question(prompt)) === "Y";
   }
 };
 
