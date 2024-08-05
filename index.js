@@ -31,7 +31,7 @@ const promptProject = async () => {
   const projects = Object.keys(settings.projects);
   const defaultAnswer = projects[0];
   let prompt = "Select a Project:\n";
-  prompt += projects.map((project) => `[${project}]`).join("\n");
+  prompt += projects.map((project) => `> [${project}]`).join("\n");
   prompt += `\nYour Choice (Default: ${defaultAnswer}): `;
   if (isDebugger) {
     console.log(prompt);
@@ -51,7 +51,7 @@ const promptSprintId = async (boardId) => {
       const endDate = new Date(sprint.endDate).toISOString().split("T")[0];
       description += `, ${startDate || "?"} to ${endDate || "?"}`;
     }
-    return `[${sprint.id}] ${description}`;
+    return `> [${sprint.id}] ${description}`;
   };
   let prompt = "Select a Sprint ID:\n";
   prompt += sprints.slice(0, 4).map(mapper).join("\n");
