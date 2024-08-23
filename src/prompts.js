@@ -6,16 +6,17 @@ export const readline = createInterface({ input: process.stdin, output: process.
 const isDebugger = inspector.url() !== undefined;
 
 export const promptProject = async () => {
+  const defaultAnswer = 0;
   const projects = Object.keys(settings.projects);
-  const defaultAnswer = projects[0];
   let prompt = "Select a Project:\n";
-  prompt += projects.map((project) => `> [${project}]`).join("\n");
+  prompt += projects.map((project, index) => `> [${index}] ${project}`).join("\n");
   prompt += `\nYour Choice (Default: ${defaultAnswer}): `;
   if (isDebugger) {
     console.log(prompt);
-    return defaultAnswer;
+    return projects[defaultAnswer];
   } else {
-    return (await readline.question(prompt)) || defaultAnswer;
+    const index = (await readline.question(prompt)) || defaultAnswer;
+    return projects[index];
   }
 };
 
