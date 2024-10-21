@@ -4,7 +4,7 @@ export const settings = {
   },
   jira: {
     apiToken: "",
-    domain: "https://<domain-name>.atlassian.net",
+    domain: "https://boatyard.atlassian.net",
     email: "",
     doneStatuses: ["Staged", "Done", "Dropped"],
     effortFieldName: "customfield_10024",

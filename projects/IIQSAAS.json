@@ -1,0 +1,343 @@
+{
+  "sprintAnalytics": {
+    "189": {
+      "assignees": {
+        "Anton": {
+          "committed": 20,
+          "completed": 22,
+          "uncommitted": 5,
+          "ratio": 1.1,
+          "daysWorked": 10
+        },
+        "Yoelmy Hernandez": {
+          "committed": 28,
+          "completed": 15,
+          "uncommitted": 10,
+          "ratio": 0.5357142857142857,
+          "daysWorked": 10
+        },
+        "Yevgeny Boiarsky": {
+          "committed": 15,
+          "completed": 18,
+          "uncommitted": 3,
+          "ratio": 1.2,
+          "daysWorked": 7
+        },
+        "Philipp Bliznuk": {
+          "committed": 8,
+          "completed": 13,
+          "uncommitted": 5,
+          "ratio": 1.625,
+          "daysWorked": 10
+        }
+      },
+      "summary": {
+        "committed": 73,
+        "completed": 68,
+        "uncommitted": 23,
+        "ratio": 0.9315068493150684
+      }
+    },
+    "194": {
+      "assignees": {
+        "Yoelmy Hernandez": {
+          "committed": 15,
+          "completed": 22,
+          "uncommitted": 7,
+          "ratio": 1.4666666666666666,
+          "daysWorked": 9
+        },
+        "Philipp Bliznuk": {
+          "committed": 6,
+          "completed": 15,
+          "uncommitted": 11,
+          "ratio": 2.5,
+          "daysWorked": 9
+        },
+        "Anton": {
+          "committed": 21,
+          "completed": 21,
+          "uncommitted": 0,
+          "ratio": 1,
+          "daysWorked": 8
+        },
+        "Yevgeny Boiarsky": {
+          "committed": 5,
+          "completed": 5,
+          "uncommitted": 0,
+          "ratio": 1,
+          "daysWorked": 5
+        }
+      },
+      "summary": {
+        "committed": 47,
+        "completed": 63,
+        "uncommitted": 18,
+        "ratio": 1.3404255319148937
+      }
+    },
+    "197": {
+      "assignees": {
+        "Yevgeny Boiarsky": {
+          "committed": 11,
+          "completed": 11,
+          "uncommitted": 0,
+          "ratio": 1,
+          "daysWorked": 5
+        },
+        "Anton": {
+          "committed": 22,
+          "completed": 22,
+          "uncommitted": 2,
+          "ratio": 1,
+          "daysWorked": 10
+        },
+        "Philipp Bliznuk": {
+          "committed": 19,
+          "completed": 19,
+          "uncommitted": 8,
+          "ratio": 1,
+          "daysWorked": 10
+        },
+        "Yoelmy Hernandez": {
+          "committed": 23,
+          "completed": 10,
+          "uncommitted": 0,
+          "ratio": 0.43478260869565216,
+          "daysWorked": 10
+        }
+      },
+      "summary": {
+        "committed": 75,
+        "completed": 62,
+        "uncommitted": 10,
+        "ratio": 0.8266666666666667
+      }
+    },
+    "202": {
+      "assignees": {
+        "Yoelmy Hernandez": {
+          "committed": 19,
+          "completed": 19,
+          "uncommitted": 7,
+          "ratio": 1,
+          "daysWorked": 10
+        },
+        "Philipp Bliznuk": {
+          "committed": 15,
+          "completed": 23,
+          "uncommitted": 13,
+          "ratio": 1.5333333333333334,
+          "daysWorked": 10
+        },
+        "Anton": {
+          "committed": 24,
+          "completed": 22,
+          "uncommitted": 6,
+          "ratio": 0.9166666666666666,
+          "daysWorked": 6
+        },
+        "Yevgeny Boiarsky": {
+          "committed": 5,
+          "completed": 10,
+          "uncommitted": 5,
+          "ratio": 2,
+          "daysWorked": 6
+        }
+      },
+      "summary": {
+        "committed": 63,
+        "completed": 74,
+        "uncommitted": 31,
+        "ratio": 1.1746031746031746
+      }
+    },
+    "204": {
+      "assignees": {
+        "Yoelmy Hernandez": {
+          "committed": 21,
+          "completed": 21,
+          "uncommitted": 5,
+          "ratio": 1,
+          "daysWorked": 10
+        },
+        "Anton": {
+          "committed": 22,
+          "completed": 18,
+          "uncommitted": 1,
+          "ratio": 0.8181818181818182,
+          "daysWorked": 10
+        },
+        "Philipp Bliznuk": {
+          "committed": 14,
+          "completed": 14,
+          "uncommitted": 0,
+          "ratio": 1,
+          "daysWorked": 6
+        }
+      },
+      "summary": {
+        "committed": 62,
+        "completed": 53,
+        "uncommitted": 6,
+        "ratio": 0.8548387096774194
+      }
+    },
+    "210": {
+      "assignees": {
+        "Yoelmy Hernandez": {
+          "committed": 32,
+          "completed": 32,
+          "uncommitted": 0,
+          "ratio": 1,
+          "daysWorked": 10
+        },
+        "Anton": {
+          "committed": 23,
+          "completed": 20,
+          "uncommitted": 0,
+          "ratio": 0.8695652173913043,
+          "daysWorked": 5
+        }
+      },
+      "summary": {
+        "committed": 55,
+        "completed": 52,
+        "uncommitted": 0,
+        "ratio": 0.9454545454545454
+      }
+    },
+    "212": {
+      "assignees": {
+        "Yoelmy Hernandez": {
+          "committed": 22,
+          "completed": 20,
+          "uncommitted": 10,
+          "ratio": 0.9090909090909091,
+          "daysWorked": 10
+        },
+        "Anton": {
+          "committed": 3,
+          "completed": 3,
+          "uncommitted": 0,
+          "ratio": 1,
+          "daysWorked": 1
+        }
+      },
+      "summary": {
+        "committed": 25,
+        "completed": 23,
+        "uncommitted": 10,
+        "ratio": 0.92
+      }
+    },
+    "215": {
+      "assignees": {
+        "Yoelmy Hernandez": {
+          "committed": 26,
+          "completed": 22,
+          "uncommitted": 1,
+          "ratio": 0.8461538461538461,
+          "daysWorked": 10
+        }
+      },
+      "summary": {
+        "committed": 26,
+        "completed": 22,
+        "uncommitted": 1,
+        "ratio": 0.8461538461538461
+      }
+    },
+    "218": {
+      "assignees": {
+        "Yoelmy Hernandez": {
+          "committed": 20,
+          "completed": 25,
+          "uncommitted": 10,
+          "ratio": 1.25,
+          "daysWorked": 9
+        }
+      },
+      "summary": {
+        "committed": 20,
+        "completed": 25,
+        "uncommitted": 10,
+        "ratio": 1.25
+      }
+    },
+    "219": {
+      "assignees": {
+        "Yoelmy Hernandez": {
+          "committed": 23,
+          "completed": 21,
+          "uncommitted": 16,
+          "ratio": 0.9130434782608695,
+          "daysWorked": 10
+        },
+        "Anton": {
+          "committed": 28,
+          "completed": 14,
+          "uncommitted": 3,
+          "ratio": 0.5,
+          "daysWorked": 8
+        }
+      },
+      "summary": {
+        "committed": 51,
+        "completed": 35,
+        "uncommitted": 19,
+        "ratio": 0.6862745098039216
+      }
+    },
+    "223": {
+      "assignees": {
+        "Anton": {
+          "committed": 24,
+          "completed": 27,
+          "uncommitted": 9,
+          "ratio": 1.125,
+          "daysWorked": 10
+        },
+        "Yoelmy Hernandez": {
+          "committed": 23,
+          "completed": 18,
+          "uncommitted": 0,
+          "ratio": 0.782608695652174,
+          "daysWorked": 10
+        },
+        "Philipp Bliznuk": {
+          "committed": 5,
+          "completed": 5,
+          "uncommitted": 0,
+          "ratio": 1,
+          "daysWorked": 3
+        }
+      },
+      "summary": {
+        "committed": 52,
+        "completed": 50,
+        "uncommitted": 9,
+        "ratio": 0.9615384615384616
+      }
+    }
+  },
+  "projectAnalytics": {
+    "ratioSum": 4.663966817496229,
+    "sprintCount": 5,
+    "assignees": {
+      "Anton": {
+        "ratio": 0.875,
+        "effortPerDay": 2.3157894736842106
+      },
+      "Yoelmy Hernandez": {
+        "ratio": 0.9401793858315598,
+        "effortPerDay": 2.163265306122449
+      },
+      "Philipp Bliznuk": {
+        "ratio": 1,
+        "effortPerDay": 1.6666666666666667
+      }
+    },
+    "ratio": 0.9327933634992458
+  }
+}
