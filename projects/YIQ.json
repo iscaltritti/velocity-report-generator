@@ -406,37 +406,71 @@
         "uncommitted": 5,
         "ratio": 0.5633802816901409
       }
+    },
+    "228": {
+      "assignees": {
+        "Philipp Bliznuk": {
+          "committed": 2,
+          "completed": 2,
+          "uncommitted": 0,
+          "ratio": 1,
+          "daysWorked": 0
+        },
+        "Charly Molero": {
+          "committed": 26,
+          "completed": 31,
+          "uncommitted": 11,
+          "ratio": 1.1923076923076923,
+          "daysWorked": 10
+        },
+        "Artem Cherkashyn": {
+          "committed": 23,
+          "completed": 28,
+          "uncommitted": 10,
+          "ratio": 1.2173913043478262,
+          "daysWorked": 10
+        },
+        "Yevgeny Boiarsky": {
+          "committed": 25,
+          "completed": 25,
+          "uncommitted": 0,
+          "ratio": 1,
+          "daysWorked": 10
+        }
+      },
+      "summary": {
+        "committed": 76,
+        "completed": 86,
+        "uncommitted": 21,
+        "ratio": 1.131578947368421
+      }
     }
   },
   "projectAnalytics": {
-    "ratioSum": 3.800297844414155,
+    "ratioSum": 4.039403673503006,
     "sprintCount": 5,
     "assignees": {
       "Philipp Bliznuk": {
-        "ratio": 0.9378787878787878,
-        "effortPerDay": 1.2857142857142858
+        "ratio": 1.0833333333333333,
+        "effortPerDay": 1.76
       },
       "Charly Molero": {
-        "ratio": 0.47568627450980394,
-        "effortPerDay": 1.1538461538461537
+        "ratio": 0.5141478129713424,
+        "effortPerDay": 1.434782608695652
       },
       "Artem Cherkashyn": {
-        "ratio": 0.7222222222222222,
-        "effortPerDay": 1.3
+        "ratio": 0.9698067632850242,
+        "effortPerDay": 2.05
       },
       "Yevgeny Boiarsky": {
         "ratio": 0.6358273596176821,
         "effortPerDay": 1.7954545454545454
       },
       "Anton": {
-        "ratio": 1.078125,
-        "effortPerDay": 3.875
-      },
-      "Felipe Narvaez": {
         "ratio": 1,
-        "effortPerDay": 4
+        "effortPerDay": 4.166666666666667
       }
     },
-    "ratio": 0.760059568882831
+    "ratio": 0.8078807347006013
   }
 }
