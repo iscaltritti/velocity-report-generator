@@ -571,7 +571,7 @@
     }
   },
   "projectAnalytics": {
-    "ratioSum": 5.636513157894737,
+    "ratioSum": 5.370888157894737,
     "sprintCount": 5,
     "assignees": {
       "Artem Cherkashyn": {
@@ -591,6 +591,6 @@
         "effortPerDay": null
       }
     },
-    "ratio": 1.1273026315789474
+    "ratio": 1.0741776315789475
   }
 }
