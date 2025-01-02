@@ -555,23 +555,23 @@
           "daysWorked": 5
         },
         "Yevgeny Boiarsky": {
-          "committed": 4,
-          "completed": 4,
+          "committed": 25,
+          "completed": 25,
           "uncommitted": 0,
           "ratio": 1,
           "daysWorked": 10
         }
       },
       "summary": {
-        "committed": 39,
-        "completed": 24,
+        "committed": 64,
+        "completed": 49,
         "uncommitted": 17,
-        "ratio": 0.6153846153846154
+        "ratio": 1.03125
       }
     }
   },
   "projectAnalytics": {
-    "ratioSum": 5.220647773279352,
+    "ratioSum": 5.636513157894737,
     "sprintCount": 5,
     "assignees": {
       "Artem Cherkashyn": {
@@ -584,13 +584,13 @@
       },
       "Yevgeny Boiarsky": {
         "ratio": 1.040909090909091,
-        "effortPerDay": 1.8541666666666667
+        "effortPerDay": 2.2916666666666665
       },
       "Philipp Bliznuk": {
         "ratio": 1,
         "effortPerDay": null
       }
     },
-    "ratio": 1.0441295546558704
+    "ratio": 1.1273026315789474
   }
 }

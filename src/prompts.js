@@ -5,12 +5,11 @@ import { settings } from "../settings.js";
 export const readline = createInterface({ input: process.stdin, output: process.stdout });
 const isDebugger = inspector.url() !== undefined;
 
-export const promptProject = async () => {
-  const defaultAnswer = 0;
+export const promptProject = async (defaultAnswer = "0") => {
   const projects = Object.keys(settings.projects);
   let prompt = "Select a Project:\n";
   prompt += projects.map((project, index) => `> [${index}] ${project}`).join("\n");
-  prompt += `\nYour Choice (Default: ${defaultAnswer}): `;
+  prompt += `\nYour Choice [Default is ${defaultAnswer}]: `;
   if (isDebugger) {
     console.log(prompt);
     return projects[defaultAnswer];
@@ -33,8 +32,9 @@ export const promptSprintId = async (sprints) => {
     return `> [${sprint.id}] ${description}`;
   };
   let prompt = "Select a Sprint ID:\n";
+  prompt += "> [0] Refresh analytics without importing new data\n";
   prompt += sprints.slice(0, 4).map(mapper).join("\n");
-  prompt += `\nYour Choice (Default: ${defaultAnswer}): `;
+  prompt += `\nYour Choice [Default is ${defaultAnswer} (active)]: `;
   if (isDebugger) {
     console.log(prompt);
     return defaultAnswer;
@@ -52,7 +52,7 @@ export const promptDaysWorkedByAssignee = async (issues, defaultAnswer) => {
     return accumulator;
   }, new Set());
   for (const name of names) {
-    const prompt = `Days worked by ${name} (Default: ${defaultAnswer}): `;
+    const prompt = `Days worked by ${name} [Default is ${defaultAnswer}]: `;
     let daysWorked;
     if (isDebugger) {
       console.log(prompt);
@@ -66,7 +66,7 @@ export const promptDaysWorkedByAssignee = async (issues, defaultAnswer) => {
 };
 
 export const promptSlack = async () => {
-  const prompt = "Would you like to post this report to Slack? Y/N (Default: N): ";
+  const prompt = "Would you like to post this report to Slack? Y/N (Default is N): ";
   if (isDebugger) {
     console.log(prompt);
     return false;
