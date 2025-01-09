@@ -10,10 +10,11 @@ const main = async () => {
   const project = await promptProject();
   const sprints = await getAllSprintsByBoardId(settings.projects[project].boardId);
   const sprintId = await promptSprintId(sprints);
+  let sprintAnalytics;
   if (sprintId != "0") {
     const issues = await getAllIssuesBySprintId(sprintId);
     const daysWorkedByAssignee = await promptDaysWorkedByAssignee(issues, settings.projects[project].defaultWorkedDays);
-    const sprintAnalytics = await analyzeSprint(issues, daysWorkedByAssignee);
+    sprintAnalytics = await analyzeSprint(issues, daysWorkedByAssignee);
     await persistSprintAnalytics(sprintId, sprintAnalytics, project);
   }
   const projectAnalytics = await analyzeProject(project);
