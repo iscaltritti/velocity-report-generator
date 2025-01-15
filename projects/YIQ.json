@@ -568,29 +568,56 @@
         "uncommitted": 17,
         "ratio": 0.765625
       }
+    },
+    "242": {
+      "assignees": {
+        "Yevgeny Boiarsky": {
+          "committed": 23,
+          "completed": 20,
+          "uncommitted": 0,
+          "ratio": 0.8695652173913043,
+          "daysWorked": 9
+        },
+        "Charly Molero": {
+          "committed": 19,
+          "completed": 14,
+          "uncommitted": 0,
+          "ratio": 0.7368421052631579,
+          "daysWorked": 9
+        },
+        "Artem Cherkashyn": {
+          "committed": 18,
+          "completed": 13,
+          "uncommitted": 8,
+          "ratio": 0.7222222222222222,
+          "daysWorked": 8
+        }
+      },
+      "summary": {
+        "committed": 60,
+        "completed": 49,
+        "uncommitted": 18,
+        "ratio": 0.8166666666666667
+      }
     }
   },
   "projectAnalytics": {
-    "ratioSum": 5.370888157894737,
+    "ratioSum": 5.055975877192982,
     "sprintCount": 5,
     "assignees": {
-      "Artem Cherkashyn": {
-        "ratio": 1.049192546583851,
-        "effortPerDay": 2.347826086956522
+      "Yevgeny Boiarsky": {
+        "ratio": 1.0148221343873518,
+        "effortPerDay": 2.234042553191489
       },
       "Charly Molero": {
-        "ratio": 1.1784615384615384,
-        "effortPerDay": 2.1904761904761907
+        "ratio": 1.0873684210526315,
+        "effortPerDay": 1.829268292682927
       },
-      "Yevgeny Boiarsky": {
-        "ratio": 1.040909090909091,
-        "effortPerDay": 2.2916666666666665
-      },
-      "Philipp Bliznuk": {
-        "ratio": 1,
-        "effortPerDay": null
+      "Artem Cherkashyn": {
+        "ratio": 0.9501587301587302,
+        "effortPerDay": 2.1136363636363638
       }
     },
-    "ratio": 1.0741776315789475
+    "ratio": 1.0111951754385964
   }
 }

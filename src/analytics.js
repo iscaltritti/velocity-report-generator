@@ -29,7 +29,7 @@ export const analyzeSprint = async (issues, daysWorkedByAssignee) => {
   );
   sprint.summary.ratio = sprint.summary.completed / sprint.summary.committed || 0;
   for (const [name, assignee] of Object.entries(sprint.assignees)) {
-    if (assignee.completed === 0) {
+    if (assignee.completed === 0 || daysWorkedByAssignee[name] === 0) {
       delete sprint.assignees[name];
       continue;
     }
