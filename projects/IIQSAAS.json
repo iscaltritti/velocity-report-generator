@@ -412,25 +412,56 @@
         "uncommitted": 1,
         "ratio": 1.0178571428571428
       }
+    },
+    "246": {
+      "assignees": {
+        "Yoelmy Hernandez": {
+          "committed": 25,
+          "completed": 27,
+          "uncommitted": 5,
+          "ratio": 1.08,
+          "daysWorked": 10
+        },
+        "Anton": {
+          "committed": 23,
+          "completed": 20,
+          "uncommitted": 0,
+          "ratio": 0.8695652173913043,
+          "daysWorked": 10
+        },
+        "Philipp Bliznuk": {
+          "committed": 16,
+          "completed": 19,
+          "uncommitted": 3,
+          "ratio": 1.1875,
+          "daysWorked": 8
+        }
+      },
+      "summary": {
+        "committed": 64,
+        "completed": 66,
+        "uncommitted": 8,
+        "ratio": 1.03125
+      }
     }
   },
   "projectAnalytics": {
-    "ratioSum": 4.496587988595661,
+    "ratioSum": 4.841563478791739,
     "sprintCount": 5,
     "assignees": {
       "Yoelmy Hernandez": {
-        "ratio": 0.9301927058448797,
-        "effortPerDay": 2.122448979591837
+        "ratio": 0.9635840101927059,
+        "effortPerDay": 2.2448979591836733
       },
       "Anton": {
-        "ratio": 0.9068181818181819,
-        "effortPerDay": 2.702127659574468
+        "ratio": 0.9807312252964426,
+        "effortPerDay": 2.7142857142857144
       },
       "Philipp Bliznuk": {
-        "ratio": 0.8968253968253967,
-        "effortPerDay": 1.6
+        "ratio": 0.9549603174603174,
+        "effortPerDay": 1.7878787878787878
       }
     },
-    "ratio": 0.8993175977191322
+    "ratio": 0.9683126957583479
   }
 }
