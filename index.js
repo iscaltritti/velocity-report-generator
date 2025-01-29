@@ -6,7 +6,8 @@ import { persistProjectAnalytics, persistSprintAnalytics } from "./src/db.js";
 import { sendMessage } from "./src/slack.js";
 
 const main = async () => {
-  console.log("Welcome to the Velocity Report Generator v0.2");
+  console.log("Welcome to the Velocity Report Generator v0.3");
+  console.log("Note: Empty responses will default to the values displayed in brackets [like this].");
   const project = await promptProject();
   const sprints = await getAllSprintsByBoardId(settings.projects[project].boardId);
   const sprintId = await promptSprintId(sprints);

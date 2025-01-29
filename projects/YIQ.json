@@ -599,25 +599,67 @@
         "uncommitted": 18,
         "ratio": 0.8166666666666667
       }
+    },
+    "245": {
+      "assignees": {
+        "Yevgeny Boiarsky": {
+          "committed": 29,
+          "completed": 26,
+          "uncommitted": 3,
+          "ratio": 0.896551724137931,
+          "daysWorked": 10
+        },
+        "Lucas Cegielkowski": {
+          "committed": 24,
+          "completed": 0,
+          "uncommitted": 0,
+          "ratio": 0,
+          "daysWorked": 10
+        },
+        "Charly Molero": {
+          "committed": 23,
+          "completed": 22,
+          "uncommitted": 4,
+          "ratio": 0.9565217391304348,
+          "daysWorked": 10
+        },
+        "Artem Cherkashyn": {
+          "committed": 25,
+          "completed": 26,
+          "uncommitted": 7,
+          "ratio": 1.04,
+          "daysWorked": 10
+        }
+      },
+      "summary": {
+        "committed": 106,
+        "completed": 74,
+        "uncommitted": 27,
+        "ratio": 0.6981132075471698
+      }
     }
   },
   "projectAnalytics": {
-    "ratioSum": 5.055975877192982,
+    "ratioSum": 4.754089084740152,
     "sprintCount": 5,
     "assignees": {
       "Yevgeny Boiarsky": {
-        "ratio": 1.0148221343873518,
-        "effortPerDay": 2.234042553191489
+        "ratio": 0.9941324792149381,
+        "effortPerDay": 2.2857142857142856
+      },
+      "Lucas Cegielkowski": {
+        "ratio": 0,
+        "effortPerDay": 0
       },
       "Charly Molero": {
-        "ratio": 1.0873684210526315,
-        "effortPerDay": 1.829268292682927
+        "ratio": 1.0786727688787185,
+        "effortPerDay": 1.813953488372093
       },
       "Artem Cherkashyn": {
-        "ratio": 0.9501587301587302,
-        "effortPerDay": 2.1136363636363638
+        "ratio": 0.9581587301587302,
+        "effortPerDay": 2.0217391304347827
       }
     },
-    "ratio": 1.0111951754385964
+    "ratio": 0.9508178169480305
   }
 }

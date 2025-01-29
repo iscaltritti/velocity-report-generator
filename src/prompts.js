@@ -9,7 +9,7 @@ export const promptProject = async (defaultAnswer = "0") => {
   const projects = Object.keys(settings.projects);
   let prompt = "Select a Project:\n";
   prompt += projects.map((project, index) => `> [${index}] ${project}`).join("\n");
-  prompt += `\nYour Choice [Default is ${defaultAnswer}]: `;
+  prompt += `\nYour Choice [${defaultAnswer}]: `;
   if (isDebugger) {
     console.log(prompt);
     return projects[defaultAnswer];
@@ -34,7 +34,7 @@ export const promptSprintId = async (sprints) => {
   let prompt = "Select a Sprint ID:\n";
   prompt += "> [0] Refresh analytics without importing new data\n";
   prompt += sprints.slice(0, 4).map(mapper).join("\n");
-  prompt += `\nYour Choice [Default is ${defaultAnswer} (active)]: `;
+  prompt += `\nYour Choice [${defaultAnswer} (active)]: `;
   if (isDebugger) {
     console.log(prompt);
     return defaultAnswer;
@@ -46,13 +46,11 @@ export const promptSprintId = async (sprints) => {
 export const promptDaysWorkedByAssignee = async (issues, defaultAnswer) => {
   const daysWorkedByAssignee = {};
   const names = issues.reduce((accumulator, issue) => {
-    if (settings.jira.doneStatuses.includes(issue.fields.status.name)) {
-      accumulator.add(issue.fields.assignee.displayName);
-    }
+    accumulator.add(issue.fields.assignee.displayName);
     return accumulator;
   }, new Set());
   for (const name of names) {
-    const prompt = `Days worked by ${name} [Default is ${defaultAnswer}]: `;
+    const prompt = `Days worked by ${name} (0 omits from analytics) [${defaultAnswer}]: `;
     let daysWorked;
     if (isDebugger) {
       console.log(prompt);
@@ -66,7 +64,7 @@ export const promptDaysWorkedByAssignee = async (issues, defaultAnswer) => {
 };
 
 export const promptSlack = async () => {
-  const prompt = "Would you like to post this report to Slack? Y/N (Default is N): ";
+  const prompt = "Would you like to post this report to Slack? Y/N [N]: ";
   if (isDebugger) {
     console.log(prompt);
     return false;
