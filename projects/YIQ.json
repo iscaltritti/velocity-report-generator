@@ -637,29 +637,78 @@
         "uncommitted": 27,
         "ratio": 0.6981132075471698
       }
+    },
+    "313": {
+      "assignees": {
+        "Lucas Cegielkowski": {
+          "committed": 33,
+          "completed": 32,
+          "uncommitted": 5,
+          "ratio": 0.9696969696969697,
+          "daysWorked": 10
+        },
+        "Yevgeny Boiarsky": {
+          "committed": 20,
+          "completed": 31,
+          "uncommitted": 15,
+          "ratio": 1.55,
+          "daysWorked": 10
+        },
+        "Anton": {
+          "committed": 23,
+          "completed": 25,
+          "uncommitted": 2,
+          "ratio": 1.0869565217391304,
+          "daysWorked": 10
+        },
+        "Artem Cherkashyn": {
+          "committed": 26,
+          "completed": 22,
+          "uncommitted": 11,
+          "ratio": 0.8461538461538461,
+          "daysWorked": 10
+        },
+        "Charly Molero": {
+          "committed": 5,
+          "completed": 5,
+          "uncommitted": 0,
+          "ratio": 1,
+          "daysWorked": 3
+        }
+      },
+      "summary": {
+        "committed": 109,
+        "completed": 121,
+        "uncommitted": 36,
+        "ratio": 1.110091743119266
+      }
     }
   },
   "projectAnalytics": {
-    "ratioSum": 4.754089084740152,
+    "ratioSum": 4.5308474945260855,
     "sprintCount": 5,
     "assignees": {
-      "Yevgeny Boiarsky": {
-        "ratio": 0.9941324792149381,
-        "effortPerDay": 2.2857142857142856
-      },
       "Lucas Cegielkowski": {
-        "ratio": 0,
-        "effortPerDay": 0
+        "ratio": 0.48484848484848486,
+        "effortPerDay": 1.6
       },
-      "Charly Molero": {
-        "ratio": 1.0786727688787185,
-        "effortPerDay": 1.813953488372093
+      "Yevgeny Boiarsky": {
+        "ratio": 1.0541324792149382,
+        "effortPerDay": 2.510204081632653
+      },
+      "Anton": {
+        "ratio": 1.0869565217391304,
+        "effortPerDay": 2.5
       },
       "Artem Cherkashyn": {
-        "ratio": 0.9581587301587302,
-        "effortPerDay": 2.0217391304347827
+        "ratio": 0.8416752136752137,
+        "effortPerDay": 2.0652173913043477
+      },
+      "Charly Molero": {
+        "ratio": 1.012006102212052,
+        "effortPerDay": 1.9189189189189189
       }
     },
-    "ratio": 0.9508178169480305
+    "ratio": 0.9061694989052171
   }
 }

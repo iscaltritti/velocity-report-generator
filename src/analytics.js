@@ -1,14 +1,17 @@
 import { retrieveSprintAnalytics } from "./db.js";
 import { settings } from "../settings.js";
 
+const { effortFieldName, originalEffortFieldName } = settings.jira;
+
 export const analyzeSprint = async (issues, daysWorkedByAssignee) => {
   const baseCounters = { committed: 0, completed: 0, uncommitted: 0 };
   const sprint = issues.reduce(
     ({ assignees, summary }, { fields }) => {
       const assignee = fields.assignee?.displayName;
-      const effort = fields[settings.jira.effortFieldName];
+      const originalEffort = fields[originalEffortFieldName] || fields[effortFieldName];
+      const effort = fields[effortFieldName];
       const status = fields.status.name;
-      const isNew = fields.labels.some((label) => label.toUpperCase() === "NEW")
+      const isNew = fields.labels.some((label) => label.toUpperCase() === "NEW");
       if (!assignees[assignee]) {
         assignees[assignee] = { ...baseCounters };
       }
@@ -16,8 +19,8 @@ export const analyzeSprint = async (issues, daysWorkedByAssignee) => {
         summary.uncommitted += effort;
         assignees[assignee].uncommitted += effort;
       } else {
-        summary.committed += effort;
-        assignees[assignee].committed += effort;
+        summary.committed += originalEffort;
+        assignees[assignee].committed += originalEffort;
       }
       if (settings.jira.doneStatuses.includes(status)) {
         summary.completed += effort;
