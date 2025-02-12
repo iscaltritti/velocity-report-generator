@@ -87,7 +87,8 @@ export const generateReport = async (sprintId, sprintAnalytics, projectAnalytics
   let message = `[Velocity Report] Sprint ${sprintId} Completed! 👏👏👏`;
   message += `\nThe team completed ${completed} out of ${committed} committed effort points.`;
   if (uncommitted) {
-    message += `\n${uncommitted} points were added to the sprint while active.`;
+    const percentage = Math.round(uncommitted * 100 / (committed + uncommitted));
+    message += `\nUncommitted work represented ${percentage}% of this sprint's total capacity at ${uncommitted} points.`;
   }
   for (const [name, assignee] of Object.entries(sprintAnalytics.assignees)) {
     const metrics = projectAnalytics.assignees[name];
