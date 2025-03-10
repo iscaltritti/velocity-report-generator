@@ -7,7 +7,7 @@ const getDb = async (project = undefined, defaultData = { sprintAnalytics: {}, p
     if (!project) {
       throw new Error("Cannot initialize database without a project name.");
     }
-    db = await JSONFilePreset(`./projects/${project}.json`, defaultData);
+    db = await JSONFilePreset(`./db/${project}.json`, defaultData);
   }
   return db;
 };
